@@ -82,7 +82,7 @@ add_action('after_setup_theme', 'university_features');
 
 function university_adjust_queries($query)
 {
-    if (!is_admin() and is_post_type_archive('campus') and $query->is_main_query()) {
+    if (!is_admin() and is_post_type_archive('campus[') and $query->is_main_query()) {
         $query->set('posts_per_page', -1);
     }
 
